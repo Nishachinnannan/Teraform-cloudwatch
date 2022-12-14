@@ -13,17 +13,6 @@ variable "evaluation_period" {
   default     = "5"
   description = "The evaluation period over which to use when triggering alarms."
 }
-variable "unhealthy_hosts_threshold" {
-  type        = string
-  default     = "1"
-  description = "The number of unhealthy hosts."
-}
-
-variable "healthy_hosts_threshold" {
-  type        = string
-  default     = "1"
-  description = "The number of healthy hosts."
-}
 variable "cloudwatch_alarms_map" {
   type = map(object({
     alarm_namespace          = string # eg: AWS/ApplicationELB
