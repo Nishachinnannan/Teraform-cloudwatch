@@ -17,3 +17,4 @@ resource "aws_cloudwatch_metric_alarm" "target_response_time_average" {
     LoadBalancer = each.value["load_balancer_arn"]
   }
 }
+
