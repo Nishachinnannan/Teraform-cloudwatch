@@ -20,7 +20,7 @@ resource "aws_cloudwatch_metric_alarm" "httpcode_target_5xx_count" {
 terraform {
   backend "s3" {
     bucket = "nishanthi"
-    key    = "terraform/response/terraform.tfstate"
+    key    = "terraform/5xx/terraform.tfstate"
     region = "eu-west-1"
   }
 }
