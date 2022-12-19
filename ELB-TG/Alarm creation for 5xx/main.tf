@@ -17,3 +17,10 @@ resource "aws_cloudwatch_metric_alarm" "httpcode_target_5xx_count" {
     LoadBalancer = each.value["load_balancer_arn"]
   }
 }
+terraform {
+  backend "s3" {
+    bucket = "nishanthi"
+    key    = "terraform/response/terraform.tfstate"
+    region = "eu-west-1"
+  }
+}
