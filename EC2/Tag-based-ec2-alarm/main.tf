@@ -5,7 +5,12 @@ variable "sns_topic_name" {
   type        = string
   description = "ARN of SNS topic that will be subscribed to an alarm."
 }
-
+terraform {
+  backend "s3" {
+    bucket = "nishanthi"
+    key    = "terraform/tagbased/terraform.tfstate"
+    region = "eu-west-1"
+  }
 data "aws_instance" "selected" {
   filter {
     name   = "tag:alarms"
