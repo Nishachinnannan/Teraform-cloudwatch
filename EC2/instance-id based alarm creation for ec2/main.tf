@@ -9,6 +9,12 @@ variable "sns_topic_name" {
   type        = string
   description = "ARN of SNS topic that will be subscribed to an alarm."
 }
+terraform {
+  backend "s3" {
+    bucket = "nishanthi"
+    key    = "terraform/idbased/terraform.tfstate"
+    region = "eu-west-1"
+  }
 
 ############### create Cloudwatch alarm ##########################
 resource "aws_cloudwatch_metric_alarm" "test" {
