@@ -17,3 +17,10 @@ resource "aws_cloudwatch_metric_alarm" "unhealthy_hosts" {
     "LoadBalancer" = var.load_balancer_id
   }
 }
+terraform {
+  backend "s3" {
+    bucket = "nishanthi"
+    key    = "terraform/unhealthy/terraform.tfstate"
+    region = "eu-west-1"
+  }
+}
