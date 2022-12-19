@@ -1,3 +1,6 @@
+provider "aws" {
+  region = "eu-west-1"
+}
 variable "instance" {
   description = "Instance ID"
   type        = string
